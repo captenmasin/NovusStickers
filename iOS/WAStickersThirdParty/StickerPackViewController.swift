@@ -20,7 +20,7 @@ class StickerPackViewController: UIViewController, UICollectionViewDataSource, U
     private let interimMargin: CGFloat = 16.0
     private var itemsPerRow: Int = 4
     private let portraitItems = 4
-    private let landscapeItems = 8
+    private let landscapeItems = 4
 
     private var portraitConstraints: [NSLayoutConstraint] = []
     private var landscapeConstraints: [NSLayoutConstraint] = []
@@ -80,6 +80,8 @@ class StickerPackViewController: UIViewController, UICollectionViewDataSource, U
         shareButton.setImage(shareImage, for: .normal)
         shareButton.addTarget(self, action: #selector(shareButtonPressed(button:)), for: .touchUpInside)
         shareButton.translatesAutoresizingMaskIntoConstraints = false
+        shareButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 20, bottom: 12, right: 20)
+
         view.addSubview(shareButton)
 
         stickerPackPublisherLabel.text = "\(stickerPack.publisher) • \(stickerPack.formattedSize)"
@@ -100,8 +102,11 @@ class StickerPackViewController: UIViewController, UICollectionViewDataSource, U
 
         // Share button constraints
         view.addConstraint(NSLayoutConstraint(item: view, attribute: .bottomMargin, relatedBy: .equal, toItem: shareButton, attribute: .bottom, multiplier: 1.0, constant: buttonBottomMargin))
-        let centerPortraitShareConstraint = NSLayoutConstraint(item: view, attribute: .centerXWithinMargins, relatedBy: .equal, toItem: shareButton, attribute: .centerXWithinMargins, multiplier: 1.0, constant: 0.0)
-        let centerLandscapeShareConstraint = NSLayoutConstraint(item: view, attribute: .centerXWithinMargins, relatedBy: .equal, toItem: shareButton, attribute: .centerXWithinMargins, multiplier: 1.0, constant: -buttonSize.width / 2.0 - 5.0)
+        // Correctly centering the share button in both orientations without offset
+        let centerPortraitShareConstraint = NSLayoutConstraint(item: view, attribute: .centerX, relatedBy: .equal, toItem: shareButton, attribute: .centerX, multiplier: 1.0, constant: 0.0)
+        let centerLandscapeShareConstraint = NSLayoutConstraint(item: view, attribute: .centerX, relatedBy: .equal, toItem: shareButton, attribute: .centerX, multiplier: 1.0, constant: 0.0)
+        
+        
         portraitConstraints.append(centerPortraitShareConstraint)
         landscapeConstraints.append(centerLandscapeShareConstraint)
         view.addConstraint(centerPortraitShareConstraint)
@@ -121,8 +126,8 @@ class StickerPackViewController: UIViewController, UICollectionViewDataSource, U
         landscapeConstraints.append(bottomLandscapeAddConstraint)
         view.addConstraint(bottomPortraitAddConstraint)
         view.addConstraint(bottomLandscapeAddConstraint)
-        let centerPortraitAddConstraint = NSLayoutConstraint(item: view, attribute: .centerXWithinMargins, relatedBy: .equal, toItem: addButton, attribute: .centerXWithinMargins, multiplier: 1.0, constant: 0.0)
-        let centerLandscapeAddConstraint = NSLayoutConstraint(item: view, attribute: .centerXWithinMargins, relatedBy: .equal, toItem: addButton, attribute: .centerXWithinMargins, multiplier: 1.0, constant: buttonSize.width / 2.0 + 5.0)
+        let centerPortraitAddConstraint = NSLayoutConstraint(item: view, attribute: .centerX, relatedBy: .equal, toItem: addButton, attribute: .centerX, multiplier: 1.0, constant: 0.0)
+        let centerLandscapeAddConstraint = NSLayoutConstraint(item: view, attribute: .centerX, relatedBy: .equal, toItem: addButton, attribute: .centerX, multiplier: 1.0, constant: 0.0)
         portraitConstraints.append(centerPortraitAddConstraint)
         landscapeConstraints.append(centerLandscapeAddConstraint)
         view.addConstraint(centerPortraitAddConstraint)
@@ -158,6 +163,26 @@ class StickerPackViewController: UIViewController, UICollectionViewDataSource, U
         view.addConstraint(NSLayoutConstraint(item: topDivider, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: 0.0))
         view.addConstraint(NSLayoutConstraint(item: topDivider, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1.0, constant: 0.0))
         topDivider.addConstraint(NSLayoutConstraint(item: topDivider, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 1.0))
+        
+        
+
+        // Add constraints
+        view.addConstraint(centerPortraitShareConstraint)
+        view.addConstraint(centerLandscapeShareConstraint)
+
+
+        // Add constraints
+        view.addConstraint(centerPortraitAddConstraint)
+        view.addConstraint(centerLandscapeAddConstraint)
+
+        // Making sure addButton is above shareButton
+        let topAddButtonConstraint = NSLayoutConstraint(item: addButton, attribute: .bottom, relatedBy: .equal, toItem: shareButton, attribute: .top, multiplier: 1.0, constant: -7.0)  // Adjust the constant for spacing
+        view.addConstraint(topAddButtonConstraint)
+
+        // Position the share button at the bottom
+        let bottomShareButtonConstraint = NSLayoutConstraint(item: shareButton, attribute: .bottom, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: -20)  // Adjust constant for bottom margin
+        view.addConstraint(bottomShareButtonConstraint)
+
 
         changeConstraints()
     }
