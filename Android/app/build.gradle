@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     //the compression of webp file during build causes problem with FileDescriptor in ContentProvider.
-    compileSdkVersion 30
+    compileSdkVersion 33
     defaultConfig {
         applicationId "com.novogamer.novusstickers"
         minSdkVersion 15
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 33
+        versionCode 2
+        versionName "0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def contentProviderAuthority = applicationId + ".stickercontentprovider"
         // Creates a placeholder property to use in the manifest.
