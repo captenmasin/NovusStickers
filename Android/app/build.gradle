@@ -7,8 +7,8 @@ android {
         applicationId "com.novogamer.novusstickers"
         minSdkVersion 15
         targetSdkVersion 33
-        versionCode 2
-        versionName "0.1"
+        versionCode 3
+        versionName "0.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def contentProviderAuthority = applicationId + ".stickercontentprovider"
         // Creates a placeholder property to use in the manifest.

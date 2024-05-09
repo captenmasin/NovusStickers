@@ -61,7 +61,7 @@
           ]
         },
         {
-          "image_file": "novus_InLove.webp",
+          "image_file": "novus_InLove1.webp",
           "emojis": [
             "❤️",
             "🥰",
@@ -77,19 +77,19 @@
           ]
         },
         {
-          "image_file": "novus_Tired.webp",
-          "emojis": [
-            "😩",
-            "😴",
-            "🥱"
-          ]
-        },
-        {
           "image_file": "novus_Wink.webp",
           "emojis": [
             "😉",
             "😜",
             "😏"
+          ]
+        },
+        {
+          "image_file": "novus_Tired.webp",
+          "emojis": [
+            "😩",
+            "😴",
+            "🥱"
           ]
         }
       ]
