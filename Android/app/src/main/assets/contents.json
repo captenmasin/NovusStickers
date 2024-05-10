@@ -13,6 +13,7 @@
       "publisher_website": "https://novogamer.com",
       "privacy_policy_website": "https://novogamer.com/privacy",
       "license_agreement_website": "https://novogamer.com/terms",
+      "animated_sticker_pack": false,
       "stickers": [
         {
           "image_file": "novus_Happy.webp",
@@ -90,6 +91,45 @@
             "😩",
             "😴",
             "🥱"
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "2",
+      "name": "Novus Animated",
+      "publisher": "Novogamer",
+      "tray_image_file": "tray_Novus.png",
+      "image_data_version": "1  ",
+      "avoid_cache": false,
+      "publisher_email": "mason@novogamer.com",
+      "publisher_website": "https://novogamer.com",
+      "privacy_policy_website": "https://novogamer.com/privacy",
+      "license_agreement_website": "https://novogamer.com/terms",
+      "animated_sticker_pack": true,
+      "stickers": [
+        {
+          "image_file": "novus_Animated_InLove2.webp",
+          "emojis": [
+            "😊",
+            "😁",
+            "🙂"
+          ]
+        },
+        {
+          "image_file": "novus_Animated_InLove2.webp",
+          "emojis": [
+            "😊",
+            "😁",
+            "🙂"
+          ]
+        },
+        {
+          "image_file": "novus_Animated_InLove2.webp",
+          "emojis": [
+            "😊",
+            "😁",
+            "🙂"
           ]
         }
       ]
