@@ -109,27 +109,35 @@
       "animated_sticker_pack": true,
       "stickers": [
         {
-          "image_file": "novus_Animated_InLove2.webp",
+          "image_file": "novus_Animated_Confused.webp",
           "emojis": [
-            "😊",
+            "🤔",
+            "😐",
+            "🤷‍"
+          ]
+        },
+        {
+          "image_file": "novus_Animated_Excited.webp",
+          "emojis": [
+            "🥳",
             "😁",
-            "🙂"
+            "🎉"
           ]
         },
         {
           "image_file": "novus_Animated_InLove2.webp",
           "emojis": [
-            "😊",
-            "😁",
-            "🙂"
+            "❤️",
+            "🥰",
+            "😍"
           ]
         },
         {
-          "image_file": "novus_Animated_InLove2.webp",
+          "image_file": "novus_Animated_Wink.webp",
           "emojis": [
-            "😊",
-            "😁",
-            "🙂"
+            "😉",
+            "😜",
+            "😏"
           ]
         }
       ]
